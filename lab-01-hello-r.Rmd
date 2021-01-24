@@ -2,7 +2,7 @@
 title: "Lab 01 - Hello R!"
 output: 
   tufte::tufte_html:
-    css: ../lab.css
+    css:  lab.css
     tufte_variant: "envisioned"
     highlight: pygments
 link-citations: yes
@@ -104,7 +104,7 @@ This might feel cumbersome.
 Soon -- you *will* learn how to save your password so you don't have to enter it every time.
 But for this one assignment you'll have to manually enter each time you push in order to gain some experience with it.
 
-<iframe src="https://giphy.com/embed/SXqw0Vpql4sHX9pCl4" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kitty-the-more-you-know-SXqw0Vpql4sHX9pCl4">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/SXqw0Vpql4sHX9pCl4" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ## Packages
 
