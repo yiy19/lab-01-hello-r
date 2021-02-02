@@ -1,7 +1,7 @@
 Lab 01 - Hello R
 ================
-Insert your name here
-Insert date here
+Ye Dam Yi
+2/1/2021
 
 ## Load packages and data
 
@@ -14,19 +14,18 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+In the dataframe datasaurus\_dozen are 1846 rows and 3 columns. The
+variables included are dataset, x, and y.
 
 ### Exercise 2
-
-The answers for this Exercise are given for you below. But you should
-clean up some of the narrative so that it only includes what you want to
-turn in.
 
 First let’s plot the data in the dino dataset:
 
 ``` r
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
+
+library("ggplot2")
 
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
@@ -46,22 +45,55 @@ dino_data %>%
     ##     <dbl>
     ## 1 -0.0645
 
+The correlation coefficient is -.06447.
+
 ### Exercise 3
 
-Add code and narrative as needed. Note that the R chunks are labelled
-with `plot-star` and `cor-star` to provide spaces to place the code for
-plotting and calculating the correlation coefficient. To finish, clean
-up the narrative by removing these instructions.
+``` r
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
-Blah blah blah…
+ggplot(data = star_data, mapping = aes(x = x, y = y)) + geom_point()
+```
 
-I’m some text, you should replace me with more meaningful text…
+![](lab-01-hello-r_files/figure-gfm/plot-star-1.png)<!-- -->
+
+``` r
+star_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 x 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0630
+
+The value of the correlation coefficient is not that different from the
+one for the dino dataset.
 
 ### Exercise 4
 
-Add code and narrative as needed. Note that two R chunks are given but
-they are not labeled. Use the convention from above to name them
-appropriately.
+``` r
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) + geom_point()
+```
+
+![](lab-01-hello-r_files/figure-gfm/plot-circle-1.png)<!-- -->
+
+``` r
+circle_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 x 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0683
+
+The correlation coefficient is close to the one found for the dino
+dataset.
 
 ### Exercise 5
 
