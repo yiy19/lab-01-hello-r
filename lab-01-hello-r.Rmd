@@ -27,7 +27,6 @@ First let's plot the data in the dino dataset:
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
-install.packages("ggplot2")
 library("ggplot2")
 
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
