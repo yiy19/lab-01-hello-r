@@ -2,7 +2,10 @@
 title: "Lab 01 - Hello R"
 author: "Ye Dam Yi"
 date: "2/1/2021"
-output: github_document
+output: 
+  html_document: 
+    highlight: zenburn
+    theme: cerulean
 ---
 
 ## Load packages and data
@@ -23,7 +26,7 @@ In the dataframe datasaurus_dozen are 1846 rows and 3 columns. The variables inc
 
 First let's plot the data in the dino dataset:
 
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=5, fig.width=7}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
@@ -45,7 +48,7 @@ The correlation coefficient is -.06447.
 
 
 
-```{r plot-star}
+```{r plot-star, fig.height=5, fig.width=7}
 star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 
@@ -63,7 +66,7 @@ The value of the correlation coefficient is not that different from the one for 
 ### Exercise 4
 
 
-```{r plot-circle}
+```{r plot-circle, fig.height=5, fig.width=7}
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 
@@ -81,7 +84,7 @@ The correlation coefficient is close to the one found for the dino dataset.
 ### Exercise 5
 
 
-```{r plot-all}
+```{r plot-all, fig.height=20, fig.width=25}
 
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
@@ -89,6 +92,7 @@ ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   theme(legend.position = "none")
 
 ```
+
 
 ```{r cor-all}
 datasaurus_dozen %>%
